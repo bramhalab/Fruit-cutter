@@ -1,0 +1,68 @@
+/* bot.css - Styling purely for the Telemetry Bot & Logs so the main CSS is clean */
+
+/* Bot panel floating over canvas */
+#bot-panel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 40;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid #334155;
+    border-left: 3px solid #f59e0b;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    width: 210px;
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    contain: layout paint;
+    /* Performance optimization */
+}
+
+/* Event Logs Wrapper */
+#log-panel-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 30;
+    contain: layout paint size;
+    /* Important for performance */
+}
+
+/* Slide off screen when minimized */
+.log-hidden {
+    transform: translateY(110%);
+}
+
+#btn-restore-log {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 20;
+    display: none;
+    backdrop-filter: blur(4px);
+}
+
+.log-entry {
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    background: rgba(30, 41, 59, 0.8);
+    word-break: break-all;
+    font-family: monospace;
+}
+
+.log-red {
+    color: #f87171;
+}
+
+.log-green {
+    color: #34d399;
+}
